@@ -30,11 +30,18 @@ const ProductState = props => {
         })
     }
 
-    const deleteItem = (index) => {
-        dispatch({
-            type: DELETE,
-            payload: index
-        })
+    const deleteItem = (id) => {
+        let arr = state;
+        state.forEach((product, index) => {
+            if(product._id === id){
+                arr.splice(index, 1);
+                console.log(arr);
+                dispatch({
+                    type: DELETE,
+                    payload: arr
+                })
+            }
+        });
     }
 
     return(

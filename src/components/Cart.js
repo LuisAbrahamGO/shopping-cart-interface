@@ -42,13 +42,13 @@ const Cart = () => {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {productsLS.map((product, key, index) =>(
+                                        {productsLS.map((product, key) =>(
                                             <tr key={key}>
                                                 <td><img src={img+product.image} alt="sample" className="img w-100"/></td>
                                                 <td>{product.title}</td>
-                                                <td>{product.price}</td>
+                                                <td>${product.price}</td>
                                                 <td>
-                                                    <button className="btn btn-danger" onClick={() => deleteItem(index)}>X</button>
+                                                    <button className="btn btn-danger" onClick={() => deleteItem(product._id)}>X</button>
                                                 </td>
                                             </tr>
                                         ))}

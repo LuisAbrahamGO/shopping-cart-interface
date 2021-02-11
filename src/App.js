@@ -19,21 +19,6 @@ const App = () => {
       .then(products => setProducts(products))
   }, []);
 
-  const addProduct = (data) => {
-
-    if (localStorage.getItem('products') === null) {
-      productLS = [];
-      localStorage.setItem('products', JSON.stringify(productLS));
-    } else {
-      productLS = JSON.parse(localStorage.getItem('products'));
-    }
-
-    productLS.push(data);
-    localStorage.setItem('products', JSON.stringify(productLS));
-    console.log(productLS);
-  }
-
-
   return (
     <ProductState> 
       <Nav />
