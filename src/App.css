@@ -3,6 +3,8 @@
   z-index: 2;
 }
 
+
+
 .nav{
   display: flex;
   font-family:Verdana, Geneva, Tahoma, sans-serif ;
@@ -17,7 +19,13 @@
 .box{
   display: inline-flexbox;
   flex-wrap: wrap;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: 
+    rgba(50, 50, 93, 0.25) 
+    0px 50px 100px -20px, 
+    rgba(0, 0, 0, 0.3) 
+    0px 30px 60px -30px, 
+    rgba(10, 37, 64, 0.35) 
+    0px -2px 6px 0px inset;
   justify-content: space-around;
   margin-right: 5vh;
   margin-left: 5vh;
@@ -35,11 +43,18 @@
 .card {  
   width: 25%;
   margin: 3px;
+  display: flex;
 }
 
+.card-img {
+  width: 200px;
+  height: 200px;
+  align-self: center;
+}
 
 .card-body {
   text-align: start;
+  max-height: 50%;
 }
 
 .footer{
@@ -53,7 +68,13 @@
 .box-form {
   width: auto;
   height: auto;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: 
+    rgba(50, 50, 93, 0.25) 
+    0px 50px 100px -20px, 
+    rgba(0, 0, 0, 0.3) 
+    0px 30px 60px -30px, 
+    rgba(10, 37, 64, 0.35) 
+    0px -2px 6px 0px inset;
 }
 
 .productAdmin{
@@ -73,6 +94,15 @@
   align-items: center; 
   justify-content: center;
   height: 100%;
+}
+
+.container {
+  max-width: 50%;
+  height: auto;
+}
+
+.container-box {
+  width: 50px;
 }
 
 .carousel{

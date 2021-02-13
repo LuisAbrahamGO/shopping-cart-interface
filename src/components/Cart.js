@@ -1,30 +1,12 @@
-import React, {useContext, useState, useEffect} from 'react';
+import React, {useContext} from 'react';
 import productContext from '../context/products/productContext';
 
 const Cart = () => {
 
     const img = 'http://localhost:5000/';
 
-    let [cartProduct, setCarProduct] = useState([]);
-
     const context = useContext(productContext);
-    const {productsLS, deleteItem} = context;
-    console.log(productsLS);
-
-    const handleDelete = () => {
-        /*cartProduct.forEach((prod, index) => {
-            if(prod._id === product._id){
-                setCarProduct(
-                    cartProduct.splice(index, 1)
-                )
-            }
-        })
-        localStorage.setItem('products', JSON.stringify(cartProduct));*/
-    } 
-
-    useEffect(() => {
-
-    }, [])
+    const {productsLS, deleteItem, cleanCart} = context;
 
     return(
         <div className="cont">
@@ -54,7 +36,7 @@ const Cart = () => {
                                         ))}
                                     </tbody>
                                 </table>
-                                <button  onClick={handleDelete}className="btn btn-danger w-90">clean cart</button>
+                                <button  onClick={cleanCart}className="btn btn-danger w-90">clean cart</button>
                             </div>
                         </i>
                     </li>

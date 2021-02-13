@@ -1,4 +1,9 @@
-import { PRODUCTLS, LOAD_STATE, DELETE } from "../../types";
+import {
+    PRODUCTLS, 
+    LOAD_STATE,
+    DELETE, 
+    CLEAN
+} from '../../types/index';
 
 export default (state, action) => {
     switch(action.type) {
@@ -11,6 +16,8 @@ export default (state, action) => {
                         ...state.slice(0, action.payload),
                         ...state.slice(action.payload + 1)
                     ]
+        case CLEAN:
+            return state = []
         default:
             return state;
     }

@@ -11,7 +11,6 @@ import ProductState from './context/products/ProductState';
 const App = () => {
 
   const [products, setProducts] = useState([]);
-  let productLS = [];
 
   useEffect(() => {
     fetch('http://localhost:5000/posts')

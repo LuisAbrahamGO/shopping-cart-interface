@@ -1,7 +1,12 @@
 import React, {useReducer, useEffect} from 'react';
 import productContext from './productContext';
 import productReducer from './productReducer';
-import {PRODUCTLS, LOAD_STATE, DELETE} from '../../types/index';
+import {
+    PRODUCTLS, 
+    LOAD_STATE,
+    DELETE, 
+    CLEAN
+} from '../../types/index';
 
 const ProductState = props => {
     const productsLS = [];
@@ -44,12 +49,19 @@ const ProductState = props => {
         });
     }
 
+    const cleanCart = () => {
+        dispatch({
+            type: CLEAN
+        })
+    }
+
     return(
         <productContext.Provider
             value={{            
                 productsLS: state,
                 addProduct,
-                deleteItem
+                deleteItem,
+                cleanCart
             }}
         >
             {props.children}
