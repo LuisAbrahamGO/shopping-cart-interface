@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, { Fragment, useContext } from 'react';
 import productContext from '../context/products/productContext';
 
 const Cart = () => {
@@ -6,27 +6,28 @@ const Cart = () => {
     const img = 'http://localhost:5000/';
 
     const context = useContext(productContext);
-    const {productsLS, deleteItem, cleanCart} = context;
+    const { productsLS, deleteItem, cleanCart } = context;
 
-    return(
+    return (
         <div className="cont">
-                <ul className="cart-list">
-                    <li className="submenu">
-                        <i className="fas fa-shopping-cart">
+            <ul className="cart-list">
+                <li className="submenu">
+                    <i className="fas fa-shopping-cart">
+                        {productsLS.length !== 0 ?
                             <div id="cart">
-                                <table className="table table-bordered">
-                                    <thead className="thead-dark">
+                                <table className="table table-hover">
+                                    <thead className="">
                                         <tr>
-                                            <th>Image</th>
+                                            <th></th>
                                             <th>Name</th>
                                             <th>Price</th>
                                             <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {productsLS.map((product, key) =>(
+                                        {productsLS.map((product, key) => (
                                             <tr key={key}>
-                                                <td><img src={img+product.image} alt="sample" className="img w-100"/></td>
+                                                <td><img src={img + product.image} alt="sample" className="img w-100" /></td>
                                                 <td>{product.title}</td>
                                                 <td>${product.price}</td>
                                                 <td>
@@ -36,12 +37,14 @@ const Cart = () => {
                                         ))}
                                     </tbody>
                                 </table>
-                                <button  onClick={cleanCart}className="btn btn-danger w-90">clean cart</button>
+                                <button onClick={cleanCart} className="btn btn-danger w-90">clean cart</button>
                             </div>
-                        </i>
-                    </li>
-                </ul>
-            </div>
+                            : <div id="cart-empty"><p>You cart is empty</p></div>
+                        }
+                    </i>
+                </li>
+            </ul>
+        </div>
     );
 }
 

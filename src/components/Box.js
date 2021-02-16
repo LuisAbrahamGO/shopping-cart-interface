@@ -21,7 +21,7 @@ const Box = ({ products }) => {
 
     return (
         <Fragment>
-            <div className="container">
+            <div className="carousel-box container">
                 <Carousel showArrows={false} dynamicHeight={true} >
                     {info.map(product =>
                         <div key={product._id}>
