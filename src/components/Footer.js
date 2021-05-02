@@ -4,9 +4,9 @@ const Footer = () => {
     return(
         <div className="footer">
             <div className="links">
-                <i class="fas fa-map-marker-alt"></i>
-                <i class="fas fa-share-alt"></i>
-                <i class="far fa-thumbs-up"></i>
+               <i class="fas fa-map-marker-alt" type="button" ></i>
+                <i class="fas fa-share-alt" type="button"></i>
+                <i class="far fa-thumbs-up" type="button"></i>
             </div>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
