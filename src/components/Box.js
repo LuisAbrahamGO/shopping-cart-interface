@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import Card from './Card';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from 'react-responsive-carousel';
+import  Carousel from './Carousel';
 
 const Box = ({ products }) => {
 
@@ -17,23 +17,16 @@ const Box = ({ products }) => {
                 info = products
             )
         }
-    }, [products])
+    }, [])
 
     return (
-        <Fragment>
-            <div className="carousel-box container">
-                <Carousel showArrows={false} dynamicHeight={true} >
-                    {info.map(product =>
-                        <div key={product._id}>
-                            <img src={`http://localhost:5000/${product.image}`} alt="sample" />
-                            <p className="legend">{product.title}</p>
-                        </div>
-                    )}
-                </Carousel>
-            </div>
+        <div className="container__sup">
+            <Carousel/>
             <div calss="container-box">
                 <div className="box">
-                    <h1>Products</h1>
+                    <div className="title">
+                        <h1>Products</h1>
+                    </div>
                     <div className="card-box">
                         {products.map((product) => (
                             <Card
@@ -44,7 +37,7 @@ const Box = ({ products }) => {
                     </div>
                 </div>
             </div>
-        </Fragment>
+        </div>
 
     );
 }
