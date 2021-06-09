@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Card from './Card';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import  Carousel from './Carousel';
